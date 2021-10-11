@@ -1,0 +1,213 @@
+QUESTION 1
+What will be the output of the following code ?
+#include <iostream>
+using namespace std;
+int main(){
+    cout << code ;
+}
+====================================================================================================================================================================================
+ANS =ERROR
+================================================================================================================================================================================
+QUESTION 2
+What will be the output of the following code ?
+#include <iostream>
+using namespace std;
+int main(){
+    cout << "career" << "labs";
+}
+==================================================================================================================================================================================
+ANS 2
+careerlabs 
+==================================================================================================================================================================================
+QUESTION 3:
+Which of the following data type stores longest decimal number ?
+=================================================================================================================================================================================
+ANS 3
+DOUBLE.ut of all given options, only float and double can hold decimal numbers. Size of the float is 4 bytes and double is 8 bytes (in most of the compilers, as the size of data types is compiler specific). So double can store bigger decimal numbers.
+=============================================================================================================================================================================
+QUESTION 4
+Compiler assigns a garbage value to an uninitialised local variable in C++ Programming ?
+================================================================================================================================================================================
+ANS 4
+ERROR.In C++, all variables contain garbage values before their initialisation.
+================================================================================================================================================================================
+QUESTION 5
+What will be the output of following statements -
+bool a = true;
+cout << a;
+================================================================================================================================================================================
+ans 5
+1.In c++, when we print the value of a bool variable, it prints either 0 (for false) or 1 (for true). It doesn't print "true" or "false".
+==============================================================================================================================================================================
+question 6:
+What is the output of the following code if the input is : 5 15?
+  #include <iostream>
+  using namespace std;
+  int main() {
+        int a, b; 
+    cin >> a;
+    cin >> b;
+    cout << (a+b);
+            return 0;
+  }
+==============================================================================================================================================================================
+ANS 6
+20
+==============================================================================================================================================================================
+QUESTION 7
+What is the output of the following code if the input is : 2 10.1 D ?
+#include <iostream>
+using namespace std;
+int main() {
+    int a;
+    double d;
+    char c;
+    cin >> a >> d >> c;
+    cout << a << d << c << endl;
+}
+=================================================================================================================================================================================
+ANS 7
+210.1D
+We are taking 3 inputs - one integer, one double and one character value. And our input is : "2 10.1 D" (without quotes). So, 2 will be assigned to a, 10.1 will be assigned to d and D will be assigned to c.
+We can enter multiple input values either separated by space or in new lines. 
+Then we are printing all the three values one by one, without any space between them. So ans is : 210.1D
+===============================================================================================================================================================================
+QUESTION 8:
+What will be the output of following statement ?
+int i = 'c';
+cout << i;
+=======================================================================================================================================================================
+ANS 99
+============================================================================================================================================================================
+QUESTION 9
+What is the output ?
+#include <iostream>
+using namespace std;
+int main()
+{
+       char c = 74;
+       cout << c;
+       return 0;
+}
+===============================================================================================================================================================================
+ANS 9:
+J
+When we assign an integer to a character variable, that integer will be treated as ASCII value of corresponding character. 74 is ASCII value of letter 'J'. Hence, 'J' will be printed.
+================================================================================================================================================================================
+QUESTION 10:
+What is the output ?
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a = 10;
+    char ch = 'a';
+    ch = ch + a;
+    cout << ch << endl;
+}
+
+============================================================================================================================================================================
+ans 10
+k
+========================================================================================================================================================================
+QUESTION 11
+
+What will be the output of following statement ?
+ cout << (‘a’ + 1);
+ ================================================================================================================================================================================
+ ans 11
+ 98
+ When you add a character and an integer, answer is also an integer. It will add the ASCII value of  char ‘a’ i.e 97  and int 1. So answer will be 98.
+ ===========================================================================================================================================================================
+question 12
+What will be the output ?
+#include <iostream>
+using namespace std;   
+int main()
+{
+    double a = 6 / 4;
+    int b  = 6 / 4;
+    double c = a + b;
+    cout << c;
+}
+=============================================================================================================================================================================
+ANS 12
+
+When 6 / 4 is performed, both the operands of / are int hence answer will be an int i.e. 1. Hence the value of both a and b is 1. Thus a + b will be 2. In C++, if a double value doesn't contain any decimal value, only integer will be printed.
+=============================================================================================================================================================================
+QUETION 13
+\#include <iostream>
+using namespace std;  
+int main()
+{
+    double a = 55.5;
+    int b = 55;
+    a = a % 10;
+    b = b % 10;
+    cout << a << " "  << b;
+}
+
+==============================================================================================================================================================================
+ANS 13
+MOD OPERTATOR CANT B USED BY DOUBLE OR FLOAT
+=====================================================================================================================================================================================
+QUESTON 14
+include <iostream>
+using namespace std;
+int main() 
+{
+    int var1 = 5;
+    int var2 = 6;
+    cout << (var1 > var2);
+ }
+
+=========================================================================================================================================================================
+ANS 14
+'>' operator gives a boolean answer. And the condition is false. So answer will be false and 0 will be printed (boolean variables print only 0 and 1).
+BOOL GIVES 1 FOR TRUE AND 0 FOR FALSE IT NEVER PRINTS TRUE AND FALSE
+==============================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
