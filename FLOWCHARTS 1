@@ -1,0 +1,40 @@
+You are given the lengths of 3 sides of a valid triangle. You need to print any one of the following outputs depending on the triangle's nature.
+Print 1, if the triangle is equilateral
+Print 0, if it's isosceles
+Print -1, if it's scalene
+Draw a flowchart for this process.
+===================================================================================================================================================================================
+ANS 1
+START
+READ A,B,C
+IFA=B AND B=C AND C=A---YES----PRINT  1.EQUILATERAL
+NO-------IFA=B OR B=C OR C=A-------YES----PRINT 0 ISOSCLES
+NO-------PRINT-1 SCALENE.
+END
+===================================================================================================================================================================================
+Sum of evens
+Send Feedback
+You are given a single positive integer, N. You need to calculate and print the sum of all even numbers till N(inclusive)
+Draw a flowchart for this process
+==============================================================================================================================================================================
+ANS2
+START
+READ N FROM USER
+CREATE STORAGE SUM =0 AND NEXTNUMBER=1
+IF NEXTNUMBER%2===0
+THEN ADD INTO SUM AS SUM+I
+REPEAT THE PROCESSUNTIL IT BECOMES LESS THAN EQUAL TO N TAKEN FROM USER
+END
+=================================================================================================================================================================================
+Find GCD
+Send Feedback
+You are given two numbers. You need to calculate and print their greatest common divisor (GCD).
+Draw a flowchart for this process.
+====================================================================================================================================================================================
+ANS 3
+START
+READ A AND B FROM USER
+INITIALISE I AS 1  AND GCD AS 1
+I<=A AND I<=B----TRUE THEN CHECK N1%I AND N2%I==0 THEN PRINT GCD=I THEN I=I+1;
+ELSE IF INOT LESS THN A ABD B PRINT I ONLY
+===============================================================================================================================================================================
