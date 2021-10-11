@@ -1,0 +1,171 @@
+QUESTION 1
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x = 5; 
+    if (x < 6)
+        cout <<  “Hello ”;
+    if(x == 5){
+        cout << “Hi ”;
+    }
+    else { 
+        cout << “Hey ”;
+    } 
+}
+======================================================================================================================================================================================
+ANS 1
+FIrst if condition is true, so "Hello " will be printed. After that, next if condition will be evaluated (as both if's are independent if's) which is again true. Hence, next "Hi " will be printed (obviously in same line). We won't go inside else, as if is already executed.
+======================================================================================================================================================================================
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 15;
+    if(x <= 15) {
+        cout << "Inside if ";
+    } else if(x == 15) {
+        cout << "Inside else if ";
+    }
+    cout << x;
+}
+=====
+#include <iostream>
+using namespace std;
+int main() {
+    int x = 15;
+    if(x <= 15) {
+        cout << "Inside if ";
+    } else if(x == 15) {
+        cout << "Inside else if ";
+    }
+    cout << x;
+}
+==============
+ans 3
+The condition inside if is true, hence statement "Inside if" will be printed. After that, we'll directly jump to statement : cout << x. So, after that 15 will be printed
+=====
+#include <iostream>
+using namespace std; 
+int main()
+{
+        int var1 = 5; 
+        int var2 = 6;
+        if ((var2 = 1) == var1)
+           cout << var2;
+        else 
+            cout  << (var2 + 1); 
+}
+
+====
+ANS 4
+2
+=====
+Inside if condition, we are doing if((var2 = 1) == var1), So first 1 will be assigned to var2 and then it'll be compared with var1. Before comparison, var2 = 1 and var1 = 5, which are not equal. So, we'll move to else part and there the value of (var2 + 1) i.e. 2 will be printed
+======
+For what values of the x is an if-statement block not executed ?
+       if((1+x) != (1-x)) {
+          cout<<"In if block";
+         }
+
+=======================
+ANS 5
+Solution Description
+The if-statement block is only not executed when the value of x is  0. For all other values, it will be treated as true.
+===============
+QUESTION 6
+What is the output
+Send Feedback
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 10, b = 20, c = 100;
+    if(a <= b || c <= b) {
+        cout << "hello" << endl;
+    }
+    else if(a <= b || a <= c) {
+        cout << "hi" << endl;
+    }
+    else {
+        cout << "hey" << endl;
+    }
+}
+===================
+ans 6
+Solution Description
+In if condition, we are using logical OR operator ("||"). So if even one condition is true, final answer will be true.
+============================
+QUESTION 7
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 10, b = 20, c = 30;
+    if(a <= b && !b) {
+        cout << "hello";
+    }
+    else if(c >= a && c >= b) {
+        cout << "hi";
+    }
+    else {
+        cout << "hey";
+    }
+}
+
+==============================
+ANS 7
+hi
+====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
