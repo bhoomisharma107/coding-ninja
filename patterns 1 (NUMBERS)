@@ -1,0 +1,186 @@
+PATTERN 1
+Print the following pattern for the given N number of rows.
+Pattern for N = 4
+4444
+4444
+4444
+4444
+Input format :
+Integer N (Total no. of rows)
+===============================================================================================================================================================================
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+       /*  Read input as specified in the question.
+	* Print output as specified in the question.
+	*/
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {
+        int j=1;
+        while(j<=n)
+        {
+            cout<<n;//KYUNKII JO N  user ne enter kiya hai vo hi print krnaa haiii
+            j=j+1;
+        }
+        cout<<endl;
+        i=i+1;
+    }
+}
+===============================================================================================================================================================================
+PATERN 2:
+
+ode : Triangular Star Pattern
+Send Feedback
+Print the following pattern for the given N number of rows.
+Pattern for N = 4
+*
+**
+***
+****
+Note : There are no spaces between the stars (*).
+Input format :
+Integer N (Total no. of rows)
+Output format :
+Pattern in N line
+==============================================================================================================================================================================
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+       /*  Read input as specified in the question.
+	* Print output as specified in the question.
+	*/
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {
+        int j=1;
+        while(j<=i)
+        {
+            cout<<"*";
+            j=j+1;
+        }
+        cout<<endl;
+        i=i+1;
+    }
+  
+}
+===============================================================================================================================================================================
+PATTERN 3
+Code : Triangle Number Pattern
+Send Feedback
+Print the following pattern for the given N number of rows.
+Pattern for N = 4
+1
+22
+333
+4444
+Input format :
+Integer N (Total no. of rows)
+Output format :
+Pattern in N lines
+Constraints
+0 <= N <= 50
+=============================================================================================================================================================================
+#include<iostream>
+using namespace std;
+
+
+int main(){
+
+       /*  Read input as specified in the question.
+	* Print output as specified in the question.
+	*/
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {
+        int j=1;
+        while(j<=i)
+        {
+            cout<<i;
+            j=j+1;
+        }
+        cout<<endl;
+        i=i+1;
+    }
+  
+}
+
+
+===============================================================================================================================================================================
+PATTERN 3:
+Code : Reverse Number Pattern
+Send Feedback
+Print the following pattern for the given N number of rows.
+Pattern for N = 4
+1
+21
+321
+4321
+Input format :
+Integer N (Total no. of rows)
+Output format :
+Pattern in N lines
+=============================================================================================================================================================================
+
+include<iostream>
+using namespace std;
+
+
+int main(){
+
+       /*  Read input as specified in the question.
+	* Print output as specified in the question.
+	*/
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {int p=i;//kyunki pattern ka start row number se ho rha aur phir uske neeche vale numer h
+        int j=1;
+        while(j<=i)
+        {
+            cout<<p;
+            p--;//p-- kyunki row number ke neeche vale print ho re hai if uppr vale hote to p++ hota
+            j++;
+        }
+     cout<<endl;
+     i=i+1;
+    }
+  
+}
+
+
+================================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
