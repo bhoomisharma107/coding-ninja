@@ -1,0 +1,202 @@
+coding questions test 1
+PROBLEM 1
+Repeating numbers
+Send Feedback
+Print the following pattern for the given number of rows.
+Pattern for N = 3
+1
+23
+4567
+Input format : N (Total no. of rows)
+
+Output format : Pattern in N lines
+
+Sample Input :
+================================================================================================================================================================================
+CODE 1:
+#include<iostream>
+using namespace std;
+{
+    
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {int k=1;
+        int j=1;
+        while(j<=i)
+        {
+           cout<<k;
+            k++;
+            j++;
+        }
+     cout<<endl;
+     i=i++;
+    }
+
+}
+==============================================================================================================================================================================
+PROBLEM 2:
+
+Print the following pattern for the given N number of rows.
+Pattern for N = 3
+ A
+ BB
+ CCC
+Input format :
+Integer N (Total no. of row
+============================================================================================================================================================================
+CODE 2:
+include<iostream>
+using namespace std;
+
+
+int main(){
+    
+    /*  Read input as specified in the question.
+     * Print output as specified in the question.
+     */
+    int i=1;
+    int n;
+    cin>>n;
+    while(i<=n)
+    {
+        int j=1;
+        char c='A'+i-1;
+        while(j<=i)
+        {
+            cout<<c;
+            j=j+1;
+        }
+        cout<<endl;
+        i=i+1;
+    }
+    
+}
+
+=================================================================================================================================================================================
+PROBLEM 3:
+
+Given an integer N, print all the prime numbers that lie in the range 2 to N (both inclusive).
+Print the prime numbers in different lines.
+Input Format :
+Integer N
+Output Format :
+Prime numbers in different lines
+Constraints :
+1 <= N <= 100
+============================================================================================================================================================================
+CODE 3:
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    /* Read input as specified in the question.
+	 * Print output as specified in the question.
+	 */
+    int n;
+    cin>>n;
+    for(int i=2;i<=n;i++)
+    {bool divided=false;
+        for(int div=2;div<=i-1;div++)
+        {
+           if(i%div==0)
+           {
+               divided=true;
+               break;
+           }
+        }
+        
+        if(divided==false)
+        {
+            cout<<i<<endl;
+        }
+        
+    }
+  
+}
+
+
+========================================================================================================================================================================
+PROBLEM 4:
+erms of AP
+Send Feedback
+Write a program to print first x terms of the series 3N + 2 which are not multiples of 4.
+Input format :
+Integer x
+Output format :
+Terms of series (separated by space)
+Constraints :
+1 <= x <= 1,00
+===========================================================================================================================================================================
+CODE 4:
+include<iostream>
+using namespace std;
+
+int main() {
+	// Write your code here
+    int x;
+    cin>>x;
+    int n=1;
+    int count=0;
+    while(count<x)
+    {
+        int term=3*n+2;
+        if(term%4!=0)
+        {
+            cout<<term<<" ";
+            count++;
+        }
+        n++;
+    }
+	
+}
+=============================================================================================================================================================================
+CODE 5:
+Repeating numbers
+Send Feedback
+Print the following pattern for the given number of rows.
+Pattern for N = 3
+1
+23
+4567
+Input format : N (Total no. of rows)
+
+Output format : Pattern in N lines
+
+Sample Input :
+5
+Sample Output :
+1
+==============================================================================================================================================================================
+
+include<iostream>
+using namespace std;
+{
+    
+    int n;
+    cin>>n;
+    int i=1;
+    while(i<=n)
+    {int k=1;
+        int j=1;
+        while(j<=i)
+        {
+           cout<<k;
+            k++;
+            j++;
+        }
+     cout<<endl;
+     i=i++;
+    }
+
+}==============================================================================================================================================================================
+
+
+
+
+
+
+
