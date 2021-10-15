@@ -1,0 +1,380 @@
+PROBLEM 1 . TO PRINT FIBONACCI SERIES
+=================================================================================================================================================================================
+CODE 1
+
+#include<iostream>
+using namespace std;
+
+
+int main(){
+    //Write your code here.
+    /*int n;
+    cin>>n;
+    int term1=1;
+    int term2=1;
+    cout<<term1;
+    cout<<term2;
+    int nextterm;
+    for(int i=1;i<=n;i++)
+    {
+        nextterm=term1+term2;
+        term1=term2;
+        term2=nextterm;
+        cout<<nextterm;
+        
+        
+        
+    }*/
+    =============================================================================================================================================================================
+    PROBLEM 2:
+    Nth Fibonacci Number
+Send Feedback
+Nth term of Fibonacci series F(n), where F(n) is a function, is calculated using the following formula -
+    F(n) = F(n-1) + F(n-2), 
+    Where, F(1) = F(2) = 1
+Provided N you have to find out the Nth Fibonacci Number.
+Input Format :
+The first line of each test case contains a real number ‘N’.
+================================================================================================================================================================================
+CODE 2:
+
+#include<iostream>
+using namespace std;
+
+
+int main(){ int n;
+    cin>>n;
+    int term1=1;
+    int term2=1;
+    int nextterm;
+    int lastterm;
+    if(n<=1)//IF USER ENTERS INDEX 1 OR 0 SO RETURNS 1
+       {
+           cout<<1;
+       }
+    else
+    {
+    for(int i=1;i<=n-2;i++)/// PEHLA 2 TERMS BI HAII HUMARE PAS THATSWHY TO EXCUE THEM WE RUN THE LOOP TO N-2
+    {
+        nextterm=term1+term2;
+        term1=term2;
+        term2=nextterm;
+    }
+    cout<<nextterm;}
+}
+    
+
+
+
+
+
+
+
+
+
+============================================================================================================================================================================
+QUESTION 1:
+Which of these jump statements can skip processing remainder of code in its body for a particular iteration ?
+ANSWER1======CONTINUE
+
+####"break" is used to exit from the current loop.
+####"return" statement is used to exit from the current function.
+####"continue" is used to skip the current iteration of a loop and continue with the next iteration.
+=============================================================================================================================================================================
+QUESTION 2:
+int i = 1;
+while(i < 5) {
+    if(i == 3) {
+        break;//BREAK KEYWORD BREAKS THE LOOP ND HENCE LOP SE NIKAL KR  1 AUR 2 HI PRINT HOGA
+    }
+    cout << i << " ";
+    i++;
+}
+ANSWER2===1,2
+===========================================================================================================================================================================
+QUESTION 3:
+What is the output
+Send Feedback
+int i = 1;
+while(i < 5) {
+    if(i == 3) {
+        continue;
+    }
+    cout << i << " ";
+    i++;
+}
+
+ANSWER 3:
+1 2 Infinite loop //KYUNKI CONTINUE JO HAI VO SKIP KRTA HA NEXT ITERATION KO PHIR START LOOP ME JYEGA PR INCREMNT NHI HUA  TO 2 PRINT HONE KE BAAD INFINETRY RUN HOGA LOOP
+-==========================================================================================================================================================================
+QUESTION 4:
+t i = 1;
+while(i < 3) {
+    int j = 1;
+    while(j < 5) {
+        if(j == 3) {
+            break;
+        }
+        cout << j << " ";
+        j++;
+    }
+    i++;
+}
+ANSWER 4
+1,2,1,2
+//KYUNKI AT 3 WE HAVE BREAK KEYWORD SO INNER LOOP BREAKS AND PHIRSE IT STARTS WITH OUTERLOOOP
+============================================================================================================================================================
+QUESTION 5:
+t i = 1;
+while(i < 3) {
+    int j = 0;
+    while(j < 5) {
+        j++;//IT IS INCREMENTING
+        if(j == 3) {
+            continue;//WONT RESULT IN INFINITE LOOP SINCE  JIS INCREMENTING
+        }
+        cout << j << " ";
+    }
+    i++;
+}
+=============================================================================================================================================================================
+ANS 5:
+1 2 4 5 1 2 4 5 //
+=============================================================================================================================================================================
+CODE 5
+ TO CHECK ANUMBER IS PRIME OR NOT
+ #include <iostream>
+using namespace std;
+
+int main(){
+
+    /* Read input as specified in the question.
+	 * Print output as specified in the question.
+	 */
+    int n;
+    cin>>n;
+    int i=1;
+    bool divided=false;
+    for(i=2;i<=n-1;i++)
+    {
+        if(n%i==0)
+        {
+            divided=true;
+            break;
+        }
+    }
+    if(divided)
+    {
+        cout<<"not a prime";
+    }
+    else
+    {
+        cout<<"prime number";
+    }
+        
+  
+}
+
+
+================================================================================================================================================================================
+CODE 6:
+TO PRINT PRIME NUMBERS IN GIVEN RANGE
+All Prime Numbers
+Send Feedback
+Given an integer N, print all the prime numbers that lie in the range 2 to N (both inclusive).
+Print the prime numbers in different lines.
+Input Format :
+Integer N
+Output Format :
+Prime numbers in different lines============================================================================================================================================
+ 
+#include <iostream>
+using namespace std;
+
+int main(){
+int n;
+    cin>>n;
+    int i;
+    for(i=2;i<=n;i++)//increneting number
+    {bool divided=false;
+        for(int div=2;div<=i/2;div++)///this lop is for checkn each n umber wether it is prime or not
+        {
+            if(i%div==0)
+            {
+                divided=true;
+                break;
+            }
+        }
+    
+    if (divided==false)
+    {
+        cout<<i<<endl;
+    }
+    
+    }
+}
+
+======================================================================================================================================================================================
+or
+
+
+ int n;
+    cin>>n;
+    int i;
+    for(i=2;i<=n;i++)//for incrementing the numbers to check in the range//first loop is for incremnting number which is upposed to be checked 
+    {bool divided=false;
+        for(int div=2;div<=i-1;div++)//for checking each number wether itis a prime or not///nd yehhh voo loop jo ek number ko check krta jayega        {
+            if(i%div==0)//check  ke liye hi kr liya vohi pta chl jayega ki prime h yanhu
+            {
+                divided=true;
+                break;
+            }
+        }
+    
+    if (divided==false)
+    {
+        cout<<i<<endl;
+    }
+    
+    }
+}
+============================================================================================================================================================================
+QUESTIONS ON ERROR
+QUESTION 1
+Will following code generate error ?
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 10;
+    if(a > 5) {
+        int b = 10;
+    }
+    cout << b << endl;
+}
+ANSWER 1====YES SINCE B  IS DECLARED IN SOME SCOPE CANT BE ACCESSED OUT;
+-============================================================================================================================================================================
+QUESTION 2
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 10;
+    if(a > 5) {
+        int a = 100;
+    }
+    cout << a << endl;
+}
+ANSWER 2===NO ERROR SINCE DECLARED GLOBALLY
+===========================================================================================================================================================================
+QUESTION 3:
+#include <iostream>
+using namespace std;
+int main() {
+    int a = 10;
+    if(a > 5) {
+        int a = 100;//IS SCOPE ME A=100
+    }
+    else {
+        int a = 110;
+    }
+    cout << a << endl;//BUT IN THHIS CASE A=10
+}
+ANSWER 3===10
+SINCE A KI VALUE 10 HI HA 
+===============================================================================================================================================================================================
+
+QUESTION 4:
+include <iostream>
+using namespace std;
+int main() {
+    for(int i = 0; i < 3; i++) {
+        cout << i << " ";
+    }
+    cout << i << " ";
+}
+
+ANSER 4:
+YES //BECAUSE I CAN BE ACCESSED WITHIN FOR LOOP ONLY COMPILER CAT DETECT IT OUTSIDE ITS SCOPE;
+================================================================================================================================================================================
+QUESTION 5:
+#include <iostream>
+using namespace std; 
+int main() {
+    int a = 10;
+    while(a > 5) {
+        int a = 1;
+        cout << a << " ";
+        a--;
+    }
+}
+==============================================================================================================================================================================
+
+ANSWER 5:
+infinite loop
+===========================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
