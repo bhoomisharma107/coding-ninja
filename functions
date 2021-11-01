@@ -1,0 +1,192 @@
+What is the return type of a method that does not returns any value ?
+=========================================================================================================================================================================
+void 
+Correct Answer
+Solution Description
+####The functions which doesn't return any value, their return type is "void". 
+===============================================================================================================================================================================
+=’s say the problem is - You will be given two numbers(both integers) and you need to return their sum.
+For this problem, what should be the return type of function -
+==============================================================================================================================================================================
+Solution Description
+####We need to return the sum of two integers, which is again an integer. So the sum that we want to return is of type "int". Hence return type should be "int" for this function.
+============================================================================================================================================================================
+ void func(int a, int b){
+    cout << (a + b);
+    }
+
+    int main() {
+    int a = 7;
+    func(a, 12);
+    }
+    ============================================================================================================================================================================
+    19.
+    =============================================================================================================================================================================
+    What will be the output of the following code ?
+void demo(int a, int b){
+    cout << a << " " << b;
+}
+
+int main() {
+    int a = 5;
+    int b = 15; 
+    demo(a);
+}
+============================================================================================================================================================================
+compilation error sinc passing only 1 value inspite of the fat that function holds two arguments
+===========================================================================================================================================================================
+Given three values - Start Fahrenheit Value (S), End Fahrenheit value (E) and Step Size (W), you need to convert all Fahrenheit values from Start to End at the gap of W, into their corresponding Celsius values and print the table.
+Input Format :
+3 integers - S, E and W respectively
+Output Format :
+Fahrenheit to Celsius conversion table. One line for every Fahrenheit and Celsius Fahrenheit value. Fahrenheit value and its corresponding Celsius value should be separate by tab ("\t")
+
+============================================================================================================================================================================
+void printTable(int start, int end, int step) {
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Print output and don't return it.
+     * Taking input is handled automatically.
+     */
+    int c;
+    for(int i=start;i<=end;i=i+step)
+    {
+        c=(i-32)*5/9;
+        cout<<i<<"\t"<<c<<endl;
+    }
+    
+}
+
+
+==============================================================================================================================================================================
+Fibonacci Number
+Send Feedback
+Given a number N, figure out if it is a member of fibonacci series or not. Return true if the number is member of fibonacci series else false.
+Fibonacci Series is defined by the recurrence
+    F(n) = F(n-1) + F(n-2)
+where F(0) = 0 and F(1) = 1
+
+
+Input Format :
+Integer N
+Output Format :
+true or false
+=======================================================================================================================================================================
+
+
+bool checkMember(int n){
+
+  /* Don't write main().
+   * Don't read input, it is passed as function argument.
+   * Return output and don't print it.
+   * Taking input and printing output is handled automatically.
+  */
+    int term1=0;
+    int term2=1;
+    int nextterm;
+    while(1)
+    {
+        if(nextterm==n)//like if the  number entered is the nextterm to true
+        {
+            return true;
+        }
+        if(nextterm>n)//if number is less stha nextterm this mean it dont exist so false
+        {
+            return false;
+        }
+        nextterm=term1+term2;
+        term1=term2;
+        term2=nextterm;
+        
+    }
+    ==========================================================================================================================================================================
+  ill following code generate any error ?
+#include <iostream>
+using namespace std;
+void func(int a) {
+    int b = a;
+    b = b + 10;
+}
+
+int main() {
+    int a = 10;
+    func(a);
+    cout << b << endl;
+}==============================================================================================================================================================================
+
+yes since scope of b is limi
+
+
+
+
+ted to its own function only
+=========================================================================================================================================================================
+ill following code generate any error ?
+#include <iostream>
+using namespace std;
+
+void func(int a) {
+    int b = 10;
+    a = b + 10;
+    cout << a << " ";
+}
+
+int main() {
+    int a = 10;
+    func(a);
+    cout << a << " ";
+}
+===============================================================================================================================================================================
+no it willl not since variables are used in the scope where they are declared
+===================================================================================================================================================================
+What will be the output of the following code ?
+void doubleValue(int a) {
+    a = a * 2;
+}
+int main() {
+    int a = 8;
+    doubleValue(a);
+    cout << a;
+}
+
+
+answer=8
+=================================================================================================================================================================================
+What will be the output of the following code ?
+int func(int a){
+    a += 10;
+    return a;
+}
+
+int main() {
+    int a = 5;
+    func(a);
+    cout << a;
+}
+answer 5
+since pass by value hua ha
+=========================================================================================================================================================================
+
+What will be the output of the following code ?
+int square(int a){
+    int ans = a * a;
+    return ans;
+}
+
+int main() {
+    int a = 4;
+    a = square(a);// yahac assign hua that is why change hui valueeee
+    cout << a;
+}
+answer 16
+==============================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
