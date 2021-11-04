@@ -1,0 +1,155 @@
+Which of the following correctly declares an array of size 10 ?
+ANSWER:int array[10]; 
+==================================================================================================================================================================================
+What will be the output of the following code ?
+int arr[100];
+cout << arr[0];
+ANSWER:GARBAGE VALUE SINCE NO VALUE IS ASSIGNED TO IT.
+=================================================================================================================================================================================
+What is the index number of the last element of an array with 5 elements ?
+ANSWER: 4(SINCE INDEXING STARTS FROM 0  TO N-1)
+================================================================================================================================================================================
+Which of the following accesses the third element stored in array?
+ANSWER:array[2] SINCE INDEXING STARTS FROM 0 TO N-1
+==============================================================================================================================================================================
+PROBLEM :
+FIND THE LARGEST ELEMENT IN THE ARRAY
+===============================================================================================================================================================================
+int a[100];
+for(int i=0;i<=n-1;i++)
+
+{cin>>a[i];}//this willl take the input values from user which he wants to store in array
+
+//now loop for printing the values stored in array
+for(int i=0;i<=n-1;i++)
+{
+cout<<a[i];}
+
+//now initialize the max element willl negative value so that it comparess with everydigit and if array has negative  values the also it can detect the max value in array so
+int max=INT_MIN;//JUST BECAUSE IF WE HAVE NEGATIVE VALUES IN ARRAY WE CAN DETECT THE REAL MAX VALUE
+//NOW AGAIN LOOP FOR COMPARING MAX VALUE WITH EVERY DIGIT IN ARRAY
+for(int i=0;i<=n-1;i++)
+{
+if(a[i]>max)//CHECK IF ELEMENT PRESENT IN ARRAY IS GREATER THEN REPLACE IT WITH THE MAX VALUE
+{
+max=a[i];}}
+cout<<max;
+==============================================================================================================================================================================
+FINAL CODE
+int a[100];
+for(int i=0;i<=n-1;i++)
+
+{cin>>a[i];}
+for(int i=0;i<=n-1;i++)
+{
+cout<<a[i];}
+int max=INT_MIN;
+for(int i=0;i<=n-1;i++)
+{
+if(a[i]>max)//CHECK IF ELEMENT PRESENT IN ARRAY IS GREATER THEN REPLACE IT WITH THE MAX VALUE
+{
+max=a[i];}}
+cout<<max;
+===============================================================================================================================================================================
+What is the correct syntax for passing array to a function -
+void func(int a[]) {
+}
+
+int main() {
+    int a[10];
+    // Call function "func" and pass array a
+}
+ANSWER:
+func(a); //WHILE CALLING A FUNCTION ONLY NAME OF ARRAY IS PASSED
+==========================================================================================================================================================================
+#include <iostream>
+using namespace std;
+int main() {
+    int a[10];
+    cout << sizeof(a) << endl;
+}
+ANSWER:===40 SINCE ONE INT REQUIRE 4 BYTES SO 4*10=40
+===========================================================================================================================================================================
+#include <iostream>
+using namespace std;
+
+void func(int a[]) {
+    cout << sizeof(a) << endl;
+}
+
+int main() {
+    int a[10];
+    func(a);
+}
+ANSWER === 8 SINCE HERE ARRAY IS PASSED AS A PARAMETER SO WE GET 8 BYTES SINCE IT IS REQUIRED TO SAVE  THE ADRESSS.
+
+===========================================================================================================================================================================
+iven an array of length N, you need to find and print the sum of all elements of the array.
+Input Format :
+Line 1 : An Integer N i.e. size of array
+Line 2 : N integers which are elements of the array, separated by spaces
+Output Format :
+Sum
+Constraints :
+1 <= N <= 10^6
+Sample Input :==============================================================================================================================================================
+CODE
+#include<iostream>
+using namespace std;
+
+int main(){
+    /* Read input as specified in the question.
+     * Print output as specified in the question.
+     */
+    int n;
+    cin>>n;
+    int sum=0;
+    int a[n];
+    for(int i=0;i<=n-1;i++)
+    {
+        cin>>a[i];
+    }
+    for(int i=0;i<=n-1;i++)
+    {
+        sum=sum+a[i];
+    }
+    cout<<sum;
+    
+}
+==============================================================================================================================================================================
+
+CODE FOR LINEAR SEARCH
+A linear search is the simplest approach employed to search for an element in a data set. It examines each element until it finds a match, 
+starting at the beginning of the data set, until the end. The search is finished and terminated once the target element is located. If it finds no match,
+the algorithm must terminate its execution and return an appropriate result.
+
+=============================================================================================================================================================================
+
+You have been given a random integer array/list(ARR) of size N, and an integer X. You need to search for the integer X in the given array/list using 'Linear Search'.
+ You have been required to return the index at which X is present in the array/list. If X has multiple occurrences in the array/list, then you need to return the index at which the first occurrence of X would be encountered. In case X is not present in the array/list, then return -1.
+'Linear search' is a method for finding an element within an array/list. It sequentially checks each element of the array/list until a match is found or the whole array/list has been searched.
+
+
+==============================================================================================================================================================================
+int linearSearch(int *arr, int n, int x)
+{
+    //Write your code here
+    for(int i=0;i<=n-1;i++)
+    {
+        if(arr[i]==x)
+        {
+            return i;
+        
+        }
+    }
+    return -1;
+    
+    
+}
+==============================================================================================================================================================================
+
+
+
+
+
+
