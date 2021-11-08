@@ -1,0 +1,152 @@
+Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n2) where n is the number of items.
+
+How Bubble Sort Works?
+We take an unsorted array for our example. Bubble sort takes Ο(n2) time so we're keeping it short and precise.
+
+Bubble Sort
+Bubble sort starts with very first two elements, comparing them to check which one is greater.
+
+Bubble Sort
+In this case, value 33 is greater than 14, so it is already in sorted locations. Next, we compare 33 with 27.
+
+Bubble Sort
+We find that 27 is smaller than 33 and these two values must be swapped.
+
+Bubble Sort
+The new array should look like this −
+
+Bubble Sort
+Next we compare 33 and 35. We find that both are in already sorted positions.
+
+Bubble Sort
+Then we move to the next two values, 35 and 10.
+
+Bubble Sort
+We know then that 10 is smaller 35. Hence they are not sorted.
+
+Bubble Sort
+We swap these values. We find that we have reached the end of the array. After one iteration, the array should look like this −
+
+Bubble Sort
+To be precise, we are now showing how an array should look like after each iteration. After the second iteration, it should look like this −
+
+Bubble Sort
+Notice that after each iteration, at least one value moves at the end.
+
+Bubble Sort
+And when there's no swap required, bubble sorts learns that an array is completely sorted.
+
+Bubble Sort
+Now we should look into some practical aspects of bubble sort.
+
+=========================================================================================================================================================================
+CODE:::::
+
+void bubbleSort(int *input, int size)
+{
+    //Write your code here
+    
+    for(int i=0;i<=size-1;i++)
+    {
+        for(int j=0;j<=size-2-i;j++)//COMPARISON SIZE SE EK KAM PEHLA HOTI HAIII AND-I BECAUSE ARRAY GETTING SORTED FROM BACKWARDS
+            if(input[j]>input[j+1])
+            {
+                int temp=input[j];
+                input[j]=input[j+1];
+                input[j+1]=temp;
+            }
+        }
+    }
+    
+-========================================================================================================================================================================
+
+nsertion sort is a sorting algorithm that places an unsorted element at its suitable place in each iteration.
+
+Insertion sort works similarly as we sort cards in our hand in a card game.
+
+We assume that the first card is already sorted then, we select an unsorted card. If the unsorted card is greater than the card in hand, it is placed on the right otherwise, to the left. In the same way, other unsorted cards are taken and put in their right place.
+
+A similar approach is used by insertion sort.
+
+Working of Insertion Sort
+Suppose we need to sort the following array.
+
+Insertion Sort Steps
+Initial array
+The first element in the array is assumed to be sorted. Take the second element and store it separately in key.
+
+Compare key with the first element. If the first element is greater than key, then key is placed in front of the first element.
+Insertion Sort Steps
+If the first element is greater than key, then key is placed in front of the first element.
+Now, the first two elements are sorted.
+
+Take the third element and compare it with the elements on the left of it. Placed it just behind the element smaller than it. If there is no element smaller than it, then place it at the beginning of the array.
+Insertion Sort Steps
+Place 1 at the beginning
+Similarly, place every unsorted element at its correct position.
+Insertion Sort Steps
+Place 4 behind 1
+Insertion Sort Steps
+Place 3 behind 1 and the array is sorted
+============================================================================================================================================================================
+INSERTION SORT CODE
+
+
+void insertionSort(int *input, int size)
+{
+    //Write your code here
+    for(int i=1;i<=size-1;i++)
+    {
+        int j=i;
+    
+       /* while(j>0 && input[j-1]>input[j])
+        {
+            int temp=input[j];
+            input[j]=input[j-1];
+            input[j-1]=temp;
+            j--;
+        }*/
+        =========================================================================================================================================================================
+        OR
+        void insertionSort(int *input, int size)
+{
+    //Write your code here
+    int j=0;
+    for(int i=1;i<=size-1;i++)
+    {
+    for(j=i;j>0,input[j-1]>input[j];j--)
+        {
+            int temp=input[j];
+            input[j]=input[j-1];
+            input[j-1]=temp;
+        }
+     
+     
+     
+     
+     }
+}
+==============================================================================================================================================================================
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
