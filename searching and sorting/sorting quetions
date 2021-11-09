@@ -1,0 +1,46 @@
+Code Merge Two Sorted Arrays
+Send Feedback
+You have been given two sorted arrays/lists(ARR1 and ARR2) of size N and M respectively, merge them into a third array/list such that the third array is also sorted.
+CODE:
+APPROACH 1:
+EITHER COPY ALL THE NUMBERS FROM ARRAYS INTO THIRD ARRAY AND THEN APPLY SORTING 
+OR APPROACH 2:
+CHOOSE THE SMALLEST ONE FROM THE TWO ARRAYS AND THEN ARRANGE IT TO THE THIRD ARRAY:
+=================================================================================================================================================================================
+void merge(int *arr1, int size1, int *arr2, int size2, int *ans)
+{
+    //Write your code here
+    int i=0,j=0,k=0;
+    while(i<=size1-1 && j<=size2-1)// FOR LOOP WONT BE USED HERE SINCE I AND J KO ALTERNSTIVELY CHANGE KARNA HAI SO WHILE LOOP SO THAT WE CAN CHANGE I AND J ACCORDING TO OUR OWN PREFERENCES
+    {
+    
+            if(arr1[i]<arr2[j])
+            {
+                ans[k]=arr1[i];
+                i++;
+                k++;
+            
+                
+            }
+            else
+            {
+                ans[k]=arr2[j];
+        
+                j++;
+                k++;
+            
+            }}
+        
+ while(i<=size1-1)//TO INSERT REMAINING ELEMENTS WHICH ARE LEFT IN BOTH THE ARRAYS TO THE THIRD ARRAY
+ {
+     ans[k]=arr1[i];
+     i++;
+     k++;
+ }
+    while(j<=size2-1)
+    {
+        ans[k]=arr2[j];
+        j++;
+        k++;
+    }
+}
