@@ -1,0 +1,228 @@
+================================================================================================================================================================================
+Rotate array
+===============================================================================================================================================================================
+Send Feedback
+You have been given a random integer array/list(ARR) of size N. Write a function that rotates the given array/list by D elements(towards the left).
+ Note:
+Change in the input array/list itself. You don't need to return or print the elements.
+===================================================================================================================================================================================
+
+CODE:
+Void rotate(int *input, int d, int n)
+{
+    //Write your code here
+    /*int j;
+    for(int i=0;i<d;i++)//itni bar rotation hogi
+    {
+        int temp=input[0];
+    for(j=0;j<=n-2;j++)//aage vale elements 0th index pr shift honge so  second last index tak hoga so j<=n-2
+    {
+
+        input[j]=input[j+1];
+    }
+        input[j]=temp;
+    
+        
+    }*/{but this approach will take time of order of n square)
+    
+    
+    
+    SECOND APPROACH WHICH WILL TAKE O(N)
+    IS FIRST REVERSE THE ARRAY TILL D THEN REVERSE ARRAY FROM D TO THE END AND THEN REVERSE THE WHOLE ARRAY
+    
+    
+    CODE:
+    
+    void reverse(int *input, int l,int h)// write the reverse function
+{
+    while(l<h)
+    {
+        int temp=input[l];
+        input[l]=input[h];
+        input[h]=temp;
+        l++;
+        h--;
+    }
+}
+  reverse(input,0,d-1);// reverse the array till d but i starts from 0  so d-1 
+    reverse(input,d,n-1);//then reverse from d to end of the array
+    reverse(input,0,n-1);// finally reverse the whole arrray
+    
+}
+
+
+===============================================================================================================================================================================
+
+PUSH ZEROES RTO THE END OF THE ARRAY
+=============================================================================================================================================================================
+
+
+
+
+Send Feedback
+You have been given a random integer array/list(ARR) of size N. You have been required to push all the zeros that are present in the array/list to the end of it.
+Also, make sure to maintain the relative order of the non-zero elements.
+==============================================================================================================================================================================
+
+CODE:
+ int count=0;//keeps a count of non zero elements
+    for(int i=0;i<=size-1;i++)
+    {
+        if(input[i]!=0)
+        {
+            input[count]=input[i];//for fillling nonzero element
+            count++;
+        }
+    }
+    for(int j=count;j<=size-1;j++)//till count  non zero elements are filled
+    {
+        input[count]=0;//for filling zero elements
+        count++;
+    }
+}
+============================================================================================================================================================================
+
+Check Array Rotation
+================================================================================================================================================================================
+Send Feedback
+You have been given an integer array/list(ARR) of size N. It has been sorted(in increasing order) and then rotated by some number 'K' in the right hand direction.
+Your task is to write a function that returns the value of 'K', that means, the index from which the array/list has been rotated.
+===========================================================================================================================================================================
+CODE:/// ROTATION INDEX IS GIVEN BYE THE INDEX OF THE SMALLEST ELEMENT IN THE ARRAY SO APPLY LINEAR SEARCH AND FIND THE ROTATION INDEX
+int arrayRotateCheck(int *input, int size)
+{
+    //Write your code here
+    //no of rotation is basically the index of the minimum element so in order to find the index of the min element appply linear search
+    int min=input[0],pos=0;
+    for(int i=1;i<=size-1;i++)//start loop from one SINCE FIRST VALUE IS ASSIGNED AS MIN .
+    {
+        if(input[i]<min)//linear search basically
+        {
+            min=input[i];
+            pos=i;
+        }
+        
+    }
+    return pos;
+    
+    ========================================================================================================================================================================
+    
+  =============================================================================================================================================================================  
+    Sort 0 1 2
+    ==========================================================================================================================================================================
+Send Feedback
+You are given an integer array/list(ARR) of size N. It contains only 0s, 1s and 2s. Write a solution to sort this array/list in a 'single scan'.
+'Single Scan' refers to iterating over the array/list just once or to put it in other words, you will be visiting each element in the array/list just once.
+Note:
+==========================================================================================================================================================================
+   CODE:
+   
+   
+    
+    void sort012(int *arr, int n)
+{
+    //Write your code here
+    int count0=0,count1=0,count2=0;
+    int i;
+    for(int i=0;i<=n-1;i++)//calculate the number of 0 1 and 2
+    {
+        if(arr[i]==0)
+        {
+            count0++;
+        }
+        if(arr[i]==1)
+        {
+            count1++;
+            
+        }
+        if(arr[i]==2)
+        {
+            count2++;
+        }
+    }
+    for(int i=0;i<count0;i++)//start filling number 0 in start
+    {
+        arr[i]=0;
+    }
+    for(int i=count0;i<(count0+count1);i++)//then 1 
+    {
+        arr[i]=1;
+    }
+    for(int i=(count0+count1);i<=n-1;i++)//and at the end 2
+    {
+        arr[i]=2;
+    }
+    
+}
+    
+ ============================================================================================================================================================================   
+    Sum of Two Arrays
+    =======================================================================================================================================================================
+Send Feedback
+Two random integer arrays/lists have been given as ARR1 and ARR2 of size N and M respectively. Both the arrays/lists contain numbers from 0 to 9(i.e. single digit integer 
+is present at every index). The idea here is to represent each array/list as an integer in itself of digits N and M.
+You need to find the sum of both the input arrays/list treating them as two integers and put the result in another array/list i.e. output array/list will also contain only 
+single digit at every index
+===========================================================================================================================================================================
+CODE:
+
+#include<cmath>
+void sumOfTwoArrays(int *input1, int size1, int *input2, int size2, int *output)
+{
+    //Write your code here
+    int i=size1-1,j=size2-1;
+    int outputsize=max(size1,size2)+1;//output array will always be of the biggest size of given array+1 
+    int k=outputsize-1;//initialize k at last of the output array
+    int ans,carry=0;
+    
+    
+    while(i>=0 && j>=0)
+    {
+        ans=input1[i]+input2[j]+carry;
+     output[k]=ans%10;
+     carry=ans/10;
+     
+        i--;
+        j--;
+        k--;
+    }
+    while(i>=0)
+    {
+        ans=input1[i]+carry;
+        output[k]=ans%10;
+        carry=ans/10;
+        
+        i--;
+        k--;
+    }
+    while(j>=0)
+    {
+        ans=input2[j]+carry;
+        output[k]=ans%10;
+        carry=ans/10;
+        j--;
+        k--;
+    }
+    output[0]=carry;//the first cell of the output is always filled by the carry digit
+    
+}
+=================================================================================================================================================================================
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
