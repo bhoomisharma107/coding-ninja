@@ -1,0 +1,114 @@
+Given a string, determine if it is a palindrome, considering only alphanumeric characters.
+Palindrome
+A palindrome is a word, number, phrase, or other sequences of characters which read the same backwards and forwards.
+===========================================================================================================================================================================
+CODE::
+Bool checkPalindrome(char str[]) {
+    int i,j;
+    // Write your code here
+  /*  int n=strlen(str);//ENTIRE LENGTH OF THE STRING IS IN N
+    
+    int i=0,j=n-1;//INITIALISE TWO POINTERS ONE AT START AND ANOTHER AT END
+    while(i<=j)
+    {
+        if(str[i]!=str[j])//START COMPARING ELEMENTS FROM START AND BEGINING IF FOUND DIFFRENT THEN SIMPLY NOT A PALINDROME STRING
+        return false;
+        
+        else
+        {
+            i++;//INCREMENT I AND J IN ORDER TO CHECK ALL THE OTHER ELEMENTS
+            j--;
+        }
+    }
+    return true;
+}*/
+ ALTERNATIVE APPROACH
+ ====================================
+:-REVERSE THE ORIGNAL STRING AND THEN COMPARE BOTH THE STRINGS AND THEN DECIDE WETHER IT IS A PALINDROM OR NOT:
+void reverse(char str[])
+{int n=strlen(str);
+    int i=0;
+    int j=n-1;
+        while(i<=j)
+        {
+            int temp=str[i];
+            str[i]=str[j];
+            str[j]=temp;
+            i++;
+            j--;
+        }
+
+}
+
+
+bool checkPalindrome(char str[]) {
+    int i,j;
+
+char str2[10000];//CREATE STRING 2 AND STORE THE CONTENTS OF ORIGNAL STRING INTO STRING 2
+    strcpy(str2,str);
+    reverse(str2); //THEN REVERSE THE STRING 2
+    if(strcmp(str,str2)==0)//FINALY COMPARE AND IF ALL MATCES IT WILL BE ZERO RETURN TRUE ELSE FALSE
+    {
+        return true;
+    }
+    else
+        return false;
+    
+}
+
+================================================================================================================================================================================
+Trim Spaces
+=====================================
+Send Feedback
+Given an input string S that contains multiple words, you need to remove all the spaces present in the input string.
+There can be multiple spaces present after any word.
+=============================================================================================================================================================================
+CODE:=
+void trimSpaces(char input[]) {
+    // Write your code here
+    int n=strlen(input);
+    int count =0;
+    for(int i=0;i<=n-1;i++)
+    {
+        if(input[i]!=' ')
+        {
+            input[count]=input[i];
+            count++;
+        }
+        
+    }
+    input[count]='\0';//end the string with string terminator
+}
+================================================================================================================================================================================
+
+Replace Character
+=========================
+Send Feedback
+Given an input string S and two characters c1 and c2, you need to replace every occurrence of character c1 with character c2 in the given string.
+Input Format :
+Line 1 : Input String S
+Line 2 : Character c1 and c2 (separated by space)
+Output Format :
+==============================================================================================================================================================================
+CODE:=
+void replaceCharacter(char input[], char c1, char c2) {
+    // Write your code here
+    
+    int n=strlen(input);
+    for(int i=0;i<=n-1;i++)
+    {
+        if(input[i]==c1)
+        {
+            input[i]=c2;
+        }
+
+    }
+}
+
+===============================================================================================================================================================================
+
+
+
+
+
+==============================================================================================================================================================================
