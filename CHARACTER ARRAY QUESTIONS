@@ -1,0 +1,44 @@
+Column Wise Sum
+Send Feedback
+Given a 2D integer array of size M*N, find and print the sum of ith column elements separated by space.
+Input Format :
+First and only line of input contains M and N, followed by M * N space separated integers representing the elements in the 2D array.
+Output Format :
+Sum of every ith column elements (separated by space)
+Constraints :
+==================================================================================================================================================================================
+CODE 1:
+
+include<iostream>
+using namespace std;
+
+
+int main(){
+
+       /*  Read input as specified in the question.
+	* Print output as specified in the question.
+	*/
+    int m,n,sumcol=0;
+    cin>>m>>n;
+    int a[m][n];
+    for(int i=0;i<=m-1;i++)
+    {
+        for(int j=0;j<=n-1;j++)//take inputof the elements prsent in the array
+        {
+            cin>>a[i][j];
+        }
+    }
+    for(int j=0;j<=n-1;j++)//THENN TRAVERSE COLUMN WISE SINCE WE WANT THE SUM COLUMN WISE A
+    {sumcol=0;//SINCE SUM OF EACH COUMN IS REQUIRED SO AFTER SUMMING ONE COLUMN SUMCOL NEEDS TO SET ZERO IN ORDER TO CALCULATE THE SUM OF THE ANOTHER COLUMN
+        for(int i=0;i<=m-1;i++)
+        {
+            sumcol=sumcol+a[i][j];
+        }
+     cout<<sumcol<<" ";
+     
+    
+    }}
+    
+    =============================================================================================================================================================================
+    
+    
