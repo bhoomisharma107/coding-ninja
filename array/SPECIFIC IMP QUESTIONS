@@ -1,0 +1,145 @@
+Largest Row or Column
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), you need to find out which row or column has the largest sum(sum of all the elements in a row/column) amongst
+all the rows and columns.
+Note :
+If there are more than one rows/columns with maximum sum, consider the row/column that comes first. And if ith row and jth column has the same largest sum, consider the ith row
+as answer.
+============================================================================================================================================================================
+CODE 1:
+
+#include<climits>
+void findLargest(int **input, int nRows, int mCols)
+{
+    //Write your code here
+    /*int max=INT_MIN;
+    int sum=0;
+    int i,j;
+    int index=0;
+    for(int i=0;i<=nRows-1;i++)
+    {sum=0;
+        for(int j=0;j<=mCols-1;j++)//sum row wise
+        {
+            sum=sum+input[i][j];
+        }
+        if(sum>max)
+        {
+            max=sum;
+            index=i;
+        }
+    }
+    bool isrow=true;
+    for(j=0;j<=mCols-1;j++)//sum column wise
+    {sum=0;
+        for(i=0;i<=nRows-1;i++)//sum is done using column ise
+        {
+            sum=sum+input[i][j];
+        }
+         if(sum>max){
+             max=sum;
+             index=j;
+             isrow=false;
+         }
+    }
+    if(isrow){
+        cout<<"row "<<index<<" "<<max<<endl;
+    }else{
+        cout<<"column "<<index<<" "<<max<<endl;
+    }
+    */
+    ==============================================================================================================================================================
+    Wave Print
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), print the array/list in a sine wave order, i.e, print the first column top to bottom, next column bottom to top and so on.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First line of each test case or query contains two integer values, 'N' and 'M', separated by a single space. They represent the 'rows' and 'columns' respectively, for the two-dimensional array/list.
+
+Second line onwards, the next 'N' lines or rows represent the ith row values.
+
+Each of the ith row constitutes 'M' column values separated by a single space.
+===================================================================================================================================================================================
+CODE 2:
+
+void wavePrint(int **input, int nRows, int mCols)
+{
+   int i,j;
+    for(j=0;j<=mCols-1;j++)//START TO COLUMN SE KREGE
+    {
+        if(j%2==0)//JO EVEN HOGA USKO TOP TO DOWN PRINT KRNA HA
+        {
+            for(i=0;i<=nRows-1;i++)//PRINTING TOP TO DOWN
+            {
+                cout<<input[i][j]<<" ";
+            }
+        }
+        else
+        {
+            for(i=nRows-1;i>=0;i--)//PRINTING DOWN TO UP IF COLUMN IS ODD
+            {
+                cout<<input[i][j]<<" ";
+            }
+        }
+    }
+    }
+===================================================================================================================================================================================
+
+Spiral Print
+Send Feedback
+For a given two-dimensional integer array/list of size (N x M), print it in a spiral form. That is, you need to print in the order followed for every iteration:
+a. First row(left to right)
+b. Last column(top to bottom)
+c. Last row(right to left)
+d. First column(bottom to top)
+ Mind that every element will be printed only once.
+ code for spiral print is
+ ===============================================================================================================================================================================
+ 
+ void spiralPrint(int **input, int nRows, int nCols)
+{
+    //Write your code here
+    int startrow=0,startcolumn=0,endrow=nRows-1,endcolumn=nCols-1;
+    int i,j;
+    while(startrow<=endrow && startcolumn<=endcolumn)
+    {
+        for(int i=startcolumn;i<=endcolumn;i++)
+        {
+            cout<<input[startrow][i]<<" ";
+            
+        }
+        startrow++;
+        for(i=startrow;i<=endrow;i++)
+        {
+            cout<<input[i][endcolumn]<<" ";
+        }
+        endcolumn--;
+        if(startrow<=endrow)
+        {
+            for(i=endcolumn;i>=startcolumn;i--)
+            {
+                cout<<input[endrow][i]<<" ";
+                
+            }
+            endrow--;
+            
+        }
+        if(startcolumn<=endcolumn)
+        {
+            for(i=endrow;i>=startrow;i--)
+            {
+                cout<<input[i][startcolumn]<<" ";
+            }
+            startcolumn++;
+        }
+        
+    }
+}
+ 
+ 
+
+
+
+
+
+
