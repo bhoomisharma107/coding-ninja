@@ -1,0 +1,159 @@
+Reverse Each Word
+Send Feedback
+Aadil has been provided with a sentence in the form of a string as a function parameter. The task is to implement a function so as to print the sentence such that each word
+in the sentence is reversed.
+Example:
+Input Sentence: "Hello, I am Aadil!"
+The expected output will print, ",olleH I ma !lidaA"
+==================================================================================================================================================================================
+CODE 1:
+void reverse(char input[],int start,int end)//create the reverse function with parameteres start and end since kahi se bi reverse krna pdega
+{while(start<end)
+{
+    char temp=input[start];
+    input[start]=input[end];
+    input[end]=temp;
+    start++;
+    end--;
+}
+    
+}
+
+
+
+
+
+
+void reverseEachWord(char input[]) {
+    int i=0,j=0,n;
+    n=strlen(input);
+    for(int i=0;i<=n;i++)//traversing till last
+    {
+        if(input[i]==' ' || input[i]=='\0')///wherever find space and null character reverse tehe string
+        {
+            reverse(input,j,i-1);//reversed
+            j=i+1;//update j so it points on the starting character 
+        }
+    }
+    input[n]='\0';//fill the last element of string with null character
+}
+===================================================================================================================================================================================
+
+QUESTION 2:
+Check Permutation
+Send Feedback
+For a given two strings, 'str1' and 'str2', check whether they are a permutation of each other or not.
+Permutations of each other
+Two strings are said to be a permutation of each other when either of the string's characters can be rearranged so that it becomes identical to the other one.
+
+Example: 
+str1= "sinrtg" 
+str2 = "string"
+
+The character of the first string(str1) can be rearranged to form str2 and hence we can say that the given strings are a permutation of each other.
+=========================================================================================================================================================================
+CODE 2:
+#include<climits>
+#include<cstring>
+
+
+
+bool isPermutation(char input1[], char input2[]) {
+  //BY USING HASHING WE DO THIS
+    
+    int hash1[27]={0};
+    int hash2[27]={0};
+    for(int i=0;input1[i]!='\0';i++)
+        hash1[input1[i]-97]++;
+    
+    
+    for(int i=0;input2[i]!='\0';i++)
+        hash2[input2[i]-97]++;
+    
+    for(int i=0;i<=26;i++)//LOOP FOR CHECKING HASHED AARRAYS
+    {
+        if(hash1[i]!=hash2[i])
+            return false;
+    }
+    return true;
+    =========================================================================================================================================================================
+    QUESTION 3:
+    
+    Remove character
+Send Feedback
+For a given a string(str) and a character X, write a function to remove all the occurrences of X from the given string.
+The input string will remain unchanged if the given character(X) doesn't exist in the input string.
+Input Format:
+The first line of input contains a string without any leading and trailing spaces.
+
+The second line of input contains a character(X) without any leading and trailing spaces.====
+
+  
+}
+================================================================================================================================================================================
+QUESTION 3:
+Remove Consecutive Duplicates
+Send Feedback
+For a given string(str), remove all the consecutive duplicate characters.
+Example:
+Input String: "aaaa"
+Expected Output: "a"
+
+Input String: "aabbbcc"
+Expected Output: "abc"
+ Input Format:
+The first and only line of input contains a string without any leading and trailing spaces. All the characters in the string would be in lower case.
+Output Format:
+
+===========================================================================================================================================================================
+CODE 3:
+void removeAllOccurrencesOfChar(char input[], char c) {
+    // Write your code here
+    int i,index=0;
+    int n=strlen(input);
+    for(i=0;i<=n;i++)//traversing the whole string
+    {
+        if(input[i]!=c)//if the entries are not eqqal to tha alphabet then 
+        {
+            input[index]=input[i];//start filling those entries in index
+            index++;///increment index also for next element
+        }
+    }
+    input[index]='\0';//terminate index by null character
+    
+}
+=============================================================================================================================================================================
+CODE 4:
+Remove Consecutive Duplicates
+Send Feedback
+For a given string(str), remove all the consecutive duplicate characters.
+Example:
+Input String: "aaaa"
+Expected Output: "a"
+
+Input String: "aabbbcc"
+Expected Output: "abc"
+==============================================================================================================================================================================
+CODE:
+#include<cstring>
+void removeConsecutiveDuplicates(char input[]) {
+    // Write your code here
+    int n=strlen(input);
+    int i,index=1;
+    char first=input[0];
+    for(i=1;i<=n;i++)
+    {
+        if(input[i]!=first)
+        {
+            input[index]=input[i];
+            first=input[i];
+            index++;
+        }
+    }
+    input[index]='\0';
+}
+===============================================================================================================================================================================
+
+
+
+
