@@ -1,0 +1,228 @@
+QUESTION 1:
+================================================================================================================================
+Linked List Usecase
+Linked List are best suited:
+==================================================================================]
+ANSWER 1:
+for the size of the structure is constantly changing. 
+===================================================================================
+QUESTION 2:
+What is the output
+Send Feedback
+class Node{
+    public:
+        int data;
+        Node *next;
+
+    Node(int data){
+        this -> data = data;
+        this -> next = NULL;
+    }
+};
+
+void print(Node *head){
+    Node *temp = head;
+
+    while(temp != NULL){
+        cout << temp -> data << " ";
+        temp = temp -> next;
+    }
+    cout << endl;
+}
+
+void increment(Node *head){
+    Node *temp = head;
+    while(temp != NULL){
+        temp -> data++;
+        temp = temp -> next;
+    }
+}
+
+int main(){
+
+    Node *node1 = new Node(10);
+    Node *node2 = new Node(20);
+    node1 -> next = node2;
+    increment(node1);
+    print(node1);
+}
+=======================================================================================================================================================================
+ANSWER 2:
+11 21
+=================================================================================================================================================
+QUESTION 3:
+What is the output
+Send Feedback
+class Node{
+    public:
+        int data;
+        Node *next;
+
+        Node(int data){
+            this -> data = data;
+            this -> next = NULL;
+        }
+};
+
+
+void print(Node *head){
+    Node *temp = head;
+
+    while(temp != NULL){
+        cout << temp -> data << " ";
+        temp = temp -> next;
+    }
+    cout << endl;
+}
+
+int main(){
+
+    Node *node1 = new Node(10);
+    Node *node2 = new Node(20);
+    node2 -> next = node1;
+    print(node2);
+}=============================================================================================================================================================
+ANSWER 3:
+20 10
+===========================================================================================================================================================
+QUESTION 4:
+What is the output
+Send Feedback
+class Node{
+public:
+    int data;
+    Node *next;
+    Node(int data){
+        this -> data = data;
+        this -> next = NULL;
+    }
+};
+
+
+void print(Node *head){
+    Node *temp = head;
+
+    while(temp != NULL){
+        cout << temp -> data << " ";
+        temp = temp -> next;
+    }
+    cout << endl;
+}
+
+int main(){
+
+    Node *node1 = new Node(10);
+    Node *node2 = new Node(20);
+    Node *node3 = new Node(20);
+    Node *node4 = new Node(20);
+    node1 -> next = node2;
+    node2 -> next = node3;
+    node3 -> next = node4;
+    print(node2);
+    ======================================================================================================================================================================
+    ANSWER 4:
+    NONE:
+    =======================================================================================================================================================================
+ QUESTION 5:
+ ===========================================================================================================
+ Length of LL
+Send Feedback
+For a given singly linked list of integers, find and return its length. Do it using an iterative method.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First and the only line of each test case or query contains elements of the singly linked list separated by a single space. 
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case, print the length of the linked list.
+
+Output for every test case will be printed in a separate line.
+ Constraints :
+1 <= t <= 10^2
+0 <= N <= 10^5
+Time Limit: 1 sec
+Sample Input 1 :
+1
+3 4 5 2 6 1 9 -1
+Sample Output 1 :
+7
+Sample Input 2 :
+2
+10 76 39 -3 2 9 -23 9 -1
+-1
+Sample Output 2 :
+8
+0
+=================================================================================================================================================
+ANSWER 5:
+
+int length(Node *head)
+{
+    //Write your code here
+    Node *temp=head;
+    int count;
+    while(temp!=NULL)
+    { count++;
+        temp=temp->next;  
+    }
+    return count;
+}
+====================================================================================================================================================
+
+QUESTION 6:
+Print ith node
+Send Feedback
+For a given a singly linked list of integers and a position 'i', print the node data at the 'i-th' position.
+ Note :
+Assume that the Indexing for the singly linked list always starts from 0.
+
+If the given position 'i',  is greater than the length of the given singly linked list, then don't print anything.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space.
+
+The second line contains the value of 'i'. It denotes the position in the given singly linked list.
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case, print the node data at the 'i-th' position of the linked list(if exists).
+
+Output for every test case will be printed in a seperate line.
+ Constraints :
+1 <= t <= 10^2
+0 <= N <= 10^5
+i  >= 0
+Time Limit: 1sec
+Sample Input 1 :
+1
+3 4 5 2 6 1 9 -1
+3
+Sample Output 1 :
+2
+Sample Input 2 :
+2
+3 4 5 2 6 1 9 -1
+0
+9 8 4 0 7 8 -1
+3
+Sample Output 2 :
+3
+0
+=================================================================================================================================================================
+ANSWER 6
+
+int length(Node *head)
+{
+    //Write your code here
+    Node *temp=head;
+    int count;
+    while(temp!=NULL)
+    { count++;
+        temp=temp->next;  
+    }
+    return count;
+}
+==================================================================================================================================================================
+
