@@ -1,0 +1,271 @@
+QUESTION 1:
+Delete node (recursive)
+Send Feedback
+Given a singly linked list of integers and position 'i', delete the node present at the 'i-th' position in the linked list recursively.
+ Note :
+Assume that the Indexing for the linked list always starts from 0.
+
+No need to print the list, it has already been taken care. Only return the new head to the list.
+ input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space.
+
+The second line of input contains a single integer depicting the value of 'i'.
+Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
+=========================================================================================================================================================================
+SOLUTION 1:
+
+    Following is the class structure of the Node class:
+
+        class Node
+        {
+        public:
+	        int data;
+	        Node *next;
+	        Node(int data)
+	        {
+		        this->data = data;
+		        this->next = NULL;
+	        }
+        };
+
+*****************************************************************/
+
+Node *deleteNodeRec(Node *head, int pos) {
+	//Write your code here
+    Node *temp=head;
+    if(head==NULL)
+        return head;
+    if(pos==0)
+    {
+        head=temp->next;
+        free(temp);
+        return head;
+    }
+    else
+    {
+ Node *a=deleteNodeRec(head->next,pos-1);
+    head->next=a;
+    return head;}
+    
+}
+==============================================================================================================================================================================
+
+QUESTOION 2:
+Insert node (recursive)
+Send Feedback
+You have been given a linked list of integers. Your task is to write a function that inserts a node at a given position, 'pos'.
+Note:
+Assume that the Indexing for the linked list always starts from 0.
+
+If the given position 'pos' is greater than length of linked list, then you should return the same linked list without any change. And if position 'pos' is equal to length of input linked list, then insert the node at the last position.
+Input format:
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first line of each test case or query contains the elements of the linked list separated by a single space. 
+
+The second line of each test case contains two space separated integers, that denote the value of 'pos' and the data to be inserted respectively. 
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element
+Output format:
+For each test case/query, print the resulting linked list of integers in a row, separated by a single space.
+
+Output for every test case will be printed in a separate line.
+You don't need to print explicitly, it has been taken care of.
+============================================================================================================================================================================
+ANSWER 2:
+    Following is the class structure of the Node class:
+
+        class Node
+        {
+        public:
+	        int data;
+	        Node *next;
+	        Node(int data)
+	        {
+		        this->data = data;
+		        this->next = NULL;
+	        }
+        };
+
+*****************************************************************/
+
+Node* insertNode(Node *head, int i, int data) {
+	// Write your code here
+    Node *temp=head;
+    if(head==NULL)
+        return head;
+    
+    if(i==0)
+    {Node *newnode=new Node(data);
+    newnode->next=head;
+     head=newnode;
+     return head;
+    }
+    Node *x=insertNode(head->next,i-1,data);
+    {
+        head->next=x;
+        return head;
+    }
+ 
+}
+==============================================================================================================================================================================
+QUESTION 3:
+Length of LL (recursive)
+Send Feedback
+Given a linked list, find and return the length of the given linked list recursively.
+Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First and the only line of each test case or query contains elements of the singly linked list separated by a single space. 
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+Output format :
+For each test case, print the length of the linked list.
+
+Output for every test case will be printed in a separate line.=============================================================================================================
+=====================================================================
+ANSWER 3:
+int length(Node *head) {
+    // Write your code here
+    if(head==NULL)
+        return 0;
+    else
+        return 1+length(head->next);
+    
+}
+==============================================================================================================================================================================
+QUESTION 4:
+
+Delete node
+Send Feedback
+You have been given a linked list of integers. Your task is to write a function that deletes a node from a given position, 'POS'.
+Note :
+Assume that the Indexing for the linked list always starts from 0.
+
+If the position is greater than or equal to the length of the linked list, you should return the same linked list without any change.
+Illustration :
+The following images depict how the deletion has been performed.
+Image-I :
+=============================================================================================================================================================================
+CODE 4:
+
+Node *deleteNode(Node *head, int pos)
+{
+    // Write your code here.
+    int count=0;
+    Node *temp=head;
+	if(head == NULL){
+    return head;
+    }
+    if(temp!=NULL && pos==0)
+    {
+        head=temp->next;
+        delete(temp);
+        return head;
+    }
+    while(temp !=NULL && count<pos-1)
+    {
+      temp=temp->next;
+        count++;
+    }
+    if(temp == NULL || temp->next == NULL){
+    	return head;
+    }
+    
+    Node *a=temp->next;
+     temp->next=temp->next->next;
+     delete(a);
+    
+	return head;    
+    
+}
+
+
+
+
+
+
+
+
+===================================================================================================================================================================================
+QUESTION 5:
+
+Find a Node in Linked List
+Send Feedback
+You have been given a singly linked list of integers. Write a function that returns the index/position of integer data denoted by 'N' (if it exists). Return -1 otherwise.
+Note :
+Assume that the Indexing for the singly linked list always starts from 0.
+Input format :
+The first line contains an Integer 'T' which denotes the number of test cases. 
+
+The first line of each test case or query contains the elements of the singly linked list separated by a single space. 
+
+The second line contains the integer value 'N'. It denotes the data to be searched in the given singly linked list.
+===================================================================================================================================================================================
+CODE 5:
+
+
+
+    Following is the class structure of the Node class:
+
+    class Node
+    {
+    	public:
+        int data;
+        Node *next;
+        Node(int data)
+        {
+	        this->data = data;
+	        this->next = NULL;
+        }
+    };
+
+*****************************************************************/
+
+int findNode(Node *head, int n){
+    // Write your code here.
+  Node *temp=head;
+    int count=0;
+    if(head==NULL)
+        return -1;
+    while(temp!=NULL)
+    {
+        if(temp->data==n)
+            return count;
+        count++;
+        temp=temp->next;
+    }
+    return -1;
+       
+}
+==========================================================================================================================================================================
+
+CODE 6:
+Print Reverse LinkedList
+Send Feedback
+You have been given a singly linked list of integers. Write a function to print the list in a reverse order.
+To explain it further, you need to start printing the data from the tail and move towards the head of the list, printing the head data at the end.
+Note :
+You can’t change any of the pointers in the linked list, just print it in the reverse order.
+ Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+The first and the only line of each test case or query contains the elements of the singly linked list separated by a single space
+==============================================================================================================================================================================
+ANSWER 6:
+
+void printReverse(Node *head)
+{
+    //Write your code here
+    if(head==NULL)
+        return ;
+   
+        printReverse(head->next);
+        cout<<head->data<<" ";
+    
+}===============================================================================================================================================================================
+
+
