@@ -1,0 +1,78 @@
+Palindrome LinkedList
+Send Feedback
+You have been given a head to a singly linked list of integers. Write a function check to whether the list given is a 'Palindrome' or not.
+ Input format :
+The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
+
+First and the only line of each test case or query contains the the elements of the singly linked list separated by a single space.
+ Remember/Consider :
+While specifying the list elements for input, -1 indicates the end of the singly linked list and hence, would never be a list element.
+===============================================================================================================================================================================
+CODE 1:
+Node *middle(Node *head)
+{
+    Node *fastptr=head;
+    Node *slowptr=head;
+        while(fastptr!=NULL && fastptr->next!=NULL)
+            
+        {
+            slowptr=slowptr->next;
+            fastptr=fastptr->next->next;
+        }
+    return slowptr;
+}
+Node *reverse(Node *head)
+{
+    Node *prev=NULL;
+    Node *next=NULL;
+    Node *temp=head;
+    while(temp!=NULL)
+    {
+        next=temp->next;
+        temp->next=prev;
+        prev=temp;
+        temp=next;
+    }
+    // return head;
+    return prev;  // here prev is our new head of half reversed linked list
+}
+bool isPalindrome(Node *head)
+{
+    //Write your code here
+    Node *temp=head;
+    if(head==NULL || head->next==NULL)
+        return true;
+    Node *mid=middle(head);
+    // Node *last=reverse(mid->next);
+    Node *last=reverse(mid);  // current starts form mid not mid -> next
+    
+    // while(last->data!=NULL)  // here you are checking last-> data which is integer value  
+    // and is node is null then there is no data variable present in it ,that's why this shows error
+    while(last!=NULL)
+    {
+        if(last->data!=temp->data)
+            return false;
+        last=last->next;
+        temp=temp->next;
+    }
+    return true;
+}
+===============================================================================================================================================================================
+
+QUESTION 2:
+CODE FOR REVERSING THE LINKED LIST
+temp=head;
+prev=NULL;
+next=NULL;
+while(temp!=NULL)
+{
+next=temp->next;
+temp->next=prev;
+prev=temp;
+temp=next;
+}
+return prev(since prev hi new head hoga)
+================================================================================================================================================================================
+
+
+
